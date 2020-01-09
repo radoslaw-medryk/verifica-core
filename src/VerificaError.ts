@@ -1,5 +1,5 @@
 import { Path } from "./Path";
-import { Verificable, isVerificable, getVerificableData } from "./verificable";
+import { Verificable, isVerificable, getVerificableData } from "./asVerificable";
 
 const isVerificaError = Symbol("isVerificaError");
 

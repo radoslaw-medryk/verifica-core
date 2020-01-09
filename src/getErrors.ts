@@ -1,4 +1,4 @@
-import { Verificable, getVerificableData } from "./verificable";
+import { Verificable, getVerificableData } from "./asVerificable";
 import { Predicate, extractErrors } from "./Predicate";
 import { VerificaException } from "./VerificaException";
 import { VerificaError } from "./VerificaError";

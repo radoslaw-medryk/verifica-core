@@ -1,5 +1,5 @@
 import { VerificaErrorPayload, VerificaError, makeError } from "./VerificaError";
-import { Verificable } from "./verificable";
+import { Verificable } from "./asVerificable";
 import { Path } from "./Path";
 
 const missingErrorPayload: VerificaErrorPayload = {

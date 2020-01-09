@@ -1,4 +1,4 @@
-import { Verificable } from "./verificable";
+import { Verificable } from "./asVerificable";
 import { Predicate } from "./Predicate";
 import { VerificaError } from "./VerificaError";
 import { ensureNoErrors } from "./ensure";

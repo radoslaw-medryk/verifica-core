@@ -26,11 +26,11 @@ export type Verificable<TBase> = {
         [key in keyof any]: Verificable<any>;
     };
 
-export function verificable<TBase>(rawValue: TBase, path: Path = []): Verificable<TBase> {
+export function asVerificable<TBase>(rawValue: TBase, path: Path = []): Verificable<TBase> {
     return internalVerificable(rawValue, path, false);
 }
 
-export function isVerificable<TBase>(obj: unknown): obj is Verificable<any> {
+export function isVerificable(obj: unknown): obj is Verificable<any> {
     return typeof obj === "object" && obj !== null && dataSymbol in obj;
 }
 

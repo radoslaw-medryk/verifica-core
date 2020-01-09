@@ -1,4 +1,4 @@
-import { Verificable, getVerificableData } from "./verificable";
+import { Verificable, getVerificableData } from "./asVerificable";
 import { makeMissingError } from "./makeMissingError";
 import { VerificaException } from "./VerificaException";
 

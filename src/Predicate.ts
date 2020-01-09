@@ -1,5 +1,5 @@
 import { VerificaError } from "./VerificaError";
-import { Verificable } from "./verificable";
+import { Verificable } from "./asVerificable";
 
 export type PredicateResult = VerificaError | VerificaError[] | void;
 
