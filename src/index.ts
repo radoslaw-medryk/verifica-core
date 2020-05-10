@@ -8,3 +8,4 @@ export { VerificaChunk } from "./VerificaChunk";
 export { VerificaError, VerificaErrorPayload, makeError } from "./VerificaError";
 export { VerificaException } from "./VerificaException";
 export { rawValue } from "./rawValue";
+export { isPhantom } from "./isPhantom";

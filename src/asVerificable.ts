@@ -67,7 +67,7 @@ function internalVerificable<TBase>(rawValue: TBase, path: Path, isPhantom: bool
 }
 
 function createProxyBase(data: VerificableData) {
-    const proxyBase = { [dataSymbol]: data };
+    const proxyBase = {};
 
     Object.defineProperties(proxyBase, {
         [isVerificableSymbol]: {
