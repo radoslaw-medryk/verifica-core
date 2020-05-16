@@ -14,13 +14,13 @@ export type Verificable<TBase> = {
 } & {
     [key in keyof TBase]-?: NonNullable<TBase[key]> extends never
         ? Verificable<any>
-        : (NonNullable<TBase[key]> extends any[]
-              ? Verificable<any>
-              : (NonNullable<TBase[key]> extends Function
-                    ? Verificable<any>
-                    : (NonNullable<TBase[key]> extends object
-                          ? Verificable<NonNullable<TBase[key]>>
-                          : Verificable<any>)));
+        : NonNullable<TBase[key]> extends any[]
+        ? Verificable<any>
+        : NonNullable<TBase[key]> extends Function
+        ? Verificable<any>
+        : NonNullable<TBase[key]> extends object
+        ? Verificable<TBase[key]>
+        : Verificable<any>;
 } &
     {
         [key in keyof any]: Verificable<any>;
