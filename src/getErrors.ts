@@ -1,10 +1,15 @@
-import { Verificable, getVerificableData } from "./asVerificable";
+import { Verificable, getVerificableData, isVerificable, asVerificable } from "./asVerificable";
 import { Predicate, extractErrors } from "./Predicate";
 import { VerificaException } from "./VerificaException";
 import { VerificaError } from "./VerificaError";
 import { makeMissingError } from "./makeMissingError";
 
-export function getErrors<TBase, TOut>(verificable: Verificable<TBase>, predicate: Predicate<TOut>): VerificaError[] {
+export function getErrors<TBase, TOut>(
+    input: Verificable<TBase> | unknown,
+    predicate: Predicate<TOut>
+): VerificaError[] {
+    const verificable = isVerificable(input) ? input : asVerificable(input);
+
     try {
         const { isPhantom } = getVerificableData(verificable);
         if (isPhantom) {

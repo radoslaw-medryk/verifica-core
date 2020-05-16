@@ -1,10 +1,12 @@
-import { Verificable, getVerificableData } from "./asVerificable";
+import { Verificable, getVerificableData, isVerificable, asVerificable } from "./asVerificable";
 import { Predicate } from "./Predicate";
 import { VerificaException } from "./VerificaException";
 import { getErrors } from "./getErrors";
 import { VerificaError } from "./VerificaError";
 
-export function ensure<TBase, TOut>(verificable: Verificable<TBase>, predicate: Predicate<TOut>): TOut {
+export function ensure<TBase, TOut>(input: Verificable<TBase> | unknown, predicate: Predicate<TOut>): TOut {
+    const verificable = isVerificable(input) ? input : asVerificable(input);
+
     const errors = getErrors(verificable, predicate);
     ensureNoErrors(errors);
 
